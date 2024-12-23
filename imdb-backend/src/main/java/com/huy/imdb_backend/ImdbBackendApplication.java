@@ -6,32 +6,42 @@ import com.huy.imdb_backend.repository.GenreRepo;
 import com.huy.imdb_backend.repository.MovieRepo;
 import com.huy.imdb_backend.utils.GenerateRandom;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
 import java.time.LocalDate;
 
 import java.time.LocalDateTime;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 
+
 @SpringBootApplication
+@EnableSpringDataWebSupport(pageSerializationMode = EnableSpringDataWebSupport.PageSerializationMode.VIA_DTO)
 public class ImdbBackendApplication implements CommandLineRunner {
 
+	private static final Logger log = LoggerFactory.getLogger(ImdbBackendApplication.class);
 	@Autowired
 	private MovieRepo movieRepository;
 
 	@Autowired
 	private GenreRepo genreRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ImdbBackendApplication.class, args);
 	}
 
 	@Override
-	@Transactional
+
 	public void run(String... args) throws Exception {
 		// Create and save genres
 //		genreRepository.deleteAll();
@@ -92,5 +102,7 @@ public class ImdbBackendApplication implements CommandLineRunner {
 //		darkKnight.setGenres(Set.of(action, drama));
 //		movieRepository.save(darkKnight);
 
+
 	}
+
 }
