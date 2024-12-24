@@ -10,5 +10,4 @@ import java.util.Set;
 public class GenreDTO {
     private Long genreId;
     private String name;
-    private Set<MovieDTO> movies;
 }

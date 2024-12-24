@@ -45,4 +45,7 @@ public class Movie {
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
     private Set<Genre> genres;
+    private double popularity;
+    private double voteAverage;
+    private int voteCount;
 }

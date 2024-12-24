@@ -1,6 +1,7 @@
 package com.huy.imdb_backend.dto;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,8 +9,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@Data
+
 @Builder
+@Data
 public class MovieDTO {
     private Long movieId;
     private String title;
@@ -21,4 +23,7 @@ public class MovieDTO {
     private Integer tmdbId;
     private LocalDateTime createdAt;
     private Set<GenreDTO> genres;
+    private double popularity;
+    private double voteAverage;
+    private int voteCount;
 }
