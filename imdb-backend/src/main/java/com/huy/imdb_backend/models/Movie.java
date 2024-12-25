@@ -1,10 +1,7 @@
 package com.huy.imdb_backend.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,6 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Movie {
     @Id
     private Long movieId;
@@ -45,7 +43,7 @@ public class Movie {
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
     private Set<Genre> genres;
-    private double popularity;
-    private double voteAverage;
-    private int voteCount;
+    private Double popularity;
+    private Double voteAverage;
+    private Integer voteCount;
 }

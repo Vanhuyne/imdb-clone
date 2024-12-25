@@ -1,4 +1,4 @@
-package com.huy.imdb_backend.client;
+package com.huy.imdb_backend.client.response;
 
 import lombok.*;
 

@@ -13,6 +13,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.time.LocalDate;
 
@@ -27,6 +28,7 @@ import java.util.Set;
 
 @SpringBootApplication
 @EnableSpringDataWebSupport(pageSerializationMode = EnableSpringDataWebSupport.PageSerializationMode.VIA_DTO)
+@EnableScheduling
 public class ImdbBackendApplication implements CommandLineRunner {
 
 	private static final Logger log = LoggerFactory.getLogger(ImdbBackendApplication.class);
@@ -41,11 +43,34 @@ public class ImdbBackendApplication implements CommandLineRunner {
 	}
 
 	@Override
-
+	@Transactional
 	public void run(String... args) throws Exception {
 		// Create and save genres
-//		genreRepository.deleteAll();
 //		movieRepository.deleteAll();
+//		genreRepository.deleteAll();
+
+//		List<Genre> genres = List.of(
+//				new Genre(28L, "Action"),
+//				new Genre(12L, "Adventure"),
+//				new Genre(16L, "Animation"),
+//				new Genre(35L, "Comedy"),
+//				new Genre(80L, "Crime"),
+//				new Genre(99L, "Documentary"),
+//				new Genre(18L, "Drama"),
+//				new Genre(10751L, "Family"),
+//				new Genre(14L, "Fantasy"),
+//				new Genre(36L, "History"),
+//				new Genre(27L, "Horror"),
+//				new Genre(10402L, "Music"),
+//				new Genre(9648L, "Mystery"),
+//				new Genre(10749L, "Romance"),
+//				new Genre(878L, "Science Fiction"),
+//				new Genre(10770L, "TV Movie"),
+//				new Genre(53L, "Thriller"),
+//				new Genre(10752L, "War"),
+//				new Genre(37L, "Western")
+//		);
+//		genreRepository.saveAll(genres);
 
 //		Genre action = new Genre();
 //		action.setGenreId(GenerateRandom.generateRandomLong());

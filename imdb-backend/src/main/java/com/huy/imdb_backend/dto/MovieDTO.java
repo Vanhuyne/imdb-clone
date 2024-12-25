@@ -23,7 +23,7 @@ public class MovieDTO {
     private Integer tmdbId;
     private LocalDateTime createdAt;
     private Set<GenreDTO> genres;
-    private double popularity;
-    private double voteAverage;
-    private int voteCount;
+    private Double popularity;
+    private Double voteAverage;
+    private Integer voteCount;
 }

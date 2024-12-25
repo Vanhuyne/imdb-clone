@@ -1,5 +1,7 @@
 package com.huy.imdb_backend.client;
 
+import com.huy.imdb_backend.client.mapper.GenreMapper;
+import com.huy.imdb_backend.client.response.MovieApiResponse;
 import com.huy.imdb_backend.dto.MovieDTO;
 import com.huy.imdb_backend.utils.GenerateRandom;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +34,7 @@ public class MovieClient {
     private String token;
 
     public List<MovieDTO> getMovies() {
-        String url = baseUrl + "/discover/movie?sort_by=popularity.desc";
+        String url = baseUrl + "/discover/movie?language=en-US&page=1&sort_by=popularity.desc";
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + token);
         headers.set("accept", "application/json");
@@ -52,6 +54,7 @@ public class MovieClient {
         if (movieApiResponse == null || movieApiResponse.getResults().isEmpty()) {
 //            throw new RuntimeException("Failed to fetch movies or no results found");
             log.error("Failed to fetch movies or no results found");
+            log.info(movieApiResponse.toString());
         }
 
         return movieApiResponse.getResults().stream()
