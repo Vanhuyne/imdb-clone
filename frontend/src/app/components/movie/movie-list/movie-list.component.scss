@@ -1,0 +1,14 @@
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    
+    &::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+  }
+  
+  .flex-none {
+    scroll-snap-align: start;
+  }
