@@ -14,8 +14,8 @@ public class MovieSyncScheduler {
     /**
      * Sync movies every 10 days at fixed intervals.
      */
-    @Scheduled(fixedRate = 10 * 24 * 60 * 60 * 1000) // 10 days in milliseconds
-    public void synchronizeFetchMovies() {
-        movieClient.syncMovie();
-    }
+//    @Scheduled(fixedRate = 10 * 24 * 60 * 60 * 1000) // 10 days in milliseconds
+//    public void synchronizeFetchMovies() {
+//        movieClient.syncMovie();
+//    }
 }
