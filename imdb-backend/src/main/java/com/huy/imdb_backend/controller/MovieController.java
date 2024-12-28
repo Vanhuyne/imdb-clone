@@ -24,4 +24,9 @@ public class MovieController {
         Pageable pageable = Pageable.ofSize(size).withPage(page);
         return new ResponseEntity<>(movieServiceImpl.getAllMovies(pageable), HttpStatus.OK);
     }
+
+    @GetMapping("/{movieId}")
+    public ResponseEntity<MovieDTO> getMovieById(@PathVariable Long movieId) {
+        return new ResponseEntity<>(movieServiceImpl.getMovieById(movieId), HttpStatus.OK);
+    }
 }

@@ -6,5 +6,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface MovieService {
     Page<MovieDTO> getAllMovies(Pageable pageable);
+    MovieDTO getMovieById(Long movieId);
 //    void syncMovie();
 }

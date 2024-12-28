@@ -28,6 +28,14 @@ public class MovieServiceImpl implements MovieService {
         );
     }
 
+    // get movie by id
+    @Override
+    public MovieDTO getMovieById(Long movieId) {
+        return movieRepo.findById(movieId)
+                .map(this::convertToMovieDTO)
+                .orElse(null);
+    }
+
     private MovieDTO convertToMovieDTO(Movie movie) {
         return MovieDTO.builder()
                 .movieId(movie.getMovieId())
