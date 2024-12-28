@@ -7,7 +7,7 @@ on:
     branches: [ main ]  # Chạy workflow khi có pull request đến nhánh main
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     defaults:
@@ -24,12 +24,14 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
-          distribution: 'adopt'
+          distribution: 'temurin'
+          cache: 'maven'
 
       # Bước 3: Xây dựng ứng dụng
       - name: Build with Maven
-        run: mvn clean install
+        working-directory: ./imdb-backend
+        run: mvn clean verify
 
       # Bước 4: Chạy các bài kiểm tra
-      - name: Run tests
-        run: mvn test
+      # - name: Run tests
+      #   run: mvn test
