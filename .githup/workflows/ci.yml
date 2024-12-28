@@ -1,4 +1,4 @@
-name: CI for Spring Boot
+name: CI for Spring Boot backend
 
 on:
   push:
@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./imdb-backend
 
     steps:
       # Bước 1: Checkout mã nguồn
