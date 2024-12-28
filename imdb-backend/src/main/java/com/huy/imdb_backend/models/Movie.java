@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -42,7 +43,7 @@ public class Movie {
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
-    private Set<Genre> genres;
+    private Set<Genre> genres = new HashSet<>();
     private Double popularity;
     private Double voteAverage;
     private Integer voteCount;
